@@ -9,15 +9,26 @@ const scores = [
     {name: 'Rianne', score: 66, grade: null}
 ];
 
-// Verwachtte uitkomsten:
-// 83
-// 77
-// 92
-// 66
-// ==========================================
+for (let i = 0; i < scores.length; i++) {
 
+    if (scores[i].score < 60) {
+        scores[i].grade ='F'
+    }
+    else if (scores[i].score < 70) {
+        scores[i].grade ='D'
+    }
+    else if (scores[i].score < 80) {
+        scores[i].grade ='C'
+    }
+    else if (scores[i].score < 90) {
+        scores[i].grade ='B'
+    }
+    else {
+        scores[i].grade ='A'
+    }
 
-
+}
+console.log(scores)
 
 
 // ==========================================
@@ -31,10 +42,6 @@ const scores = [
 // A
 // D
 // ==========================================
-
-
-
-
 
 // ==========================================
 // Opdracht 1c
@@ -63,6 +70,12 @@ const NOVIEmployees = [
     {firstName: 'Tessa', lastName: 'Steur'},
     {firstName: 'Mark', lastName: 'Rensen'},
 ];
+
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = NOVIEmployees[i].firstName.toLowerCase() + '.' + NOVIEmployees[i].lastName.toLowerCase() + '@novi.nl';
+}
+console.log (NOVIEmployees);
+
 
 // Bij NOVI horen de e-mailadressen altijd in het volgende format: voornaam.achternaam@novi.nl
 // Vóór het script zie je de originele objecten,
@@ -113,6 +126,24 @@ const students = [
     {name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: null},
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
 ];
+
+const neighborhood = {
+    '3513': 'Pijlsweerd',
+    '3514': 'Vogelenbuurt',
+    '3512': 'Binnenstad',
+    '3531': 'Lombok',
+    '3572': 'Wittevrouwen',
+    '3581': 'Oudwijk',
+    '3583': 'Schildersbuurt'
+};
+
+students.forEach(student => {
+    student.neighborhood = neighborhood[student.zipCode];
+})
+
+console.log(students);
+
+
 
 // Verwachte uitkomsten:
 // [
